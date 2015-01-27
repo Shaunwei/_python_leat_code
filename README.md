@@ -1,1 +1,5 @@
-# _python_leat_code
+Working Mode
+
+===
+
+Breakable Toy for personal learing.
