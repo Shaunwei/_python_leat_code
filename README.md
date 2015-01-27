@@ -1,5 +1,5 @@
-Working Mode
+# Working Mode
 
 ===
 
-Breakable Toy for personal learing.
+Breakable Toy for personal learning.
