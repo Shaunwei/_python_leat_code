@@ -56,3 +56,4 @@ target/
 # Local Use
 *.*~
 .gitignore
+.DS_Store
