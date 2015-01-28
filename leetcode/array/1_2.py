@@ -17,7 +17,7 @@ class Solution:
                 else:
                     repeat += 1
                     pre += 1         # TOREAD: when there is one more repeat
-                    # the previous pointer need to move forward one more the make 
+                    # the previous pointer need to move forward one more make
                     # the duplicate repeat twice
             else:
                 pre += 1
@@ -29,12 +29,13 @@ class Solution:
 #@ two pointers
 # add flag to record the repeat times
 # REMEMBER: to move the previous pointer, or it will not keep the duplicates
-# think about this, if you just check the repeat times, but not moving the pointer
+# think about this, if you just check the repeat times
+# but not moving the pointer
 # then nothing has been changed.
 
 # To avoid this: missing important move
 # do difficiate change
-# differece from 1_1: 
+# differece from 1_1:
 # 1. add counts flag
 # 2. after counts move, if counts less than requirement
 
@@ -62,20 +63,21 @@ class Solution:
 # when cur != pre , all move should happen and updates should happen
 # when cur == pre , hold moves
 # question is how?
-# solution: 
+# solution:
 
-#   when cur != pre - 2 (in this case, pre == pre-2, all same number in the ruler)
+#   when cur != pre - 2 (in this case, pre == pre-2,
+#   all same number in the ruler)
 #               which is a way to extend one pointer
 #        update pre <- cur, and pre += 1
 #   when cur == pre - 2, cur just do + 1
 
 
 #@ poniter ruler
-# use pre-2 and pre as a ruler, to make sure I have twice the number(2 distance)
+# use pre-2 and pre as a ruler,to make sure I have twice the number(2 distance)
 # which means, all numbers under ruler([pre-2 to pre]) are the same
 # which also means [0, 1, 2], pre ruler has covered 3 numbers.
 # the last number could be update any time( do array[pre] = array[cur])
-# if we use pre-1 and pre, its [0, 1], that means we need to update the next number
+# if we use pre-1 and pre, its [0, 1], means we need to update the next number
 # ( do array[pre+1] = array[cur])
 
 
@@ -86,12 +88,12 @@ class Solution:
 
 
 if __name__ == '__main__':
-    problems = [1, 1, 1, 2, 2, 3]# input
+    problems = [1, 1, 1, 2, 2, 3]  # input
     result = Solution.solve(problems)
 
     print result
 
-    assert result == [1, 1, 2, 2, 3], "Solution Error." # output check
+    assert result == [1, 1, 2, 2, 3], "Solution Error."  # output check
 
     print "problems solved."
 

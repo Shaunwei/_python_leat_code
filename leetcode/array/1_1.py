@@ -1,4 +1,6 @@
 # Remove Duplicates From Sorted Array
+
+
 class Solution:
     @classmethod
     def solve(self, problems):
@@ -12,8 +14,10 @@ class Solution:
                 pre += 1
                 array[pre] = array[cur]
 
-        return array[:pre+1] # TOREAD: return +1, because pre at the last element
-        # if return pre, if its 1, then it only return array[0:1] this means [0:1)
+        return array[:pre+1]
+        # TOREAD: return +1, because pre at the last element
+        # if return pre, if its 1
+        # then it only return array[0:1] this means [0:1)
         # so need to return [0:2) == [0, 1]
         # means array [: pre)
 
@@ -22,7 +26,6 @@ class Solution:
 
 #@ range(len(array)) == [0, 1, 2]
 # array = [1, 2, 3]
-
 
 
 if __name__ == '__main__':
