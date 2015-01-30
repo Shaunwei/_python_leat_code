@@ -12,4 +12,3 @@
 
 1.7 Two Sum
 
-Other.1 Quick Sort
