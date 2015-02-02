@@ -12,3 +12,12 @@
 
 1.7 Two Sum
 
+1.8 Three Sum
+
+1.9
+
+1.10
+
+1.11
+
+1.12 Next Permutation
