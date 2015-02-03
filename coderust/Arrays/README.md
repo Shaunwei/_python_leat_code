@@ -11,3 +11,13 @@ Optimal Job Selection
 Move Zero To Left
 
 Quick Sort
+
+Rotate Array
+
+Search Rotated Array
+
+Sliding Window Max
+
+*Sort Nuts and Bolts
+
+Find Max Single Sell Profile
