@@ -26,3 +26,10 @@ def post_order(node):
     post_order(node.left)
     post_order(node.right)
     print node.val
+
+
+def tree_sum(node):
+    if node is None:
+        return 0
+
+    return tree_sum(node.left) + node.val + tree_sum(node.right)

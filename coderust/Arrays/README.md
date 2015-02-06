@@ -20,4 +20,4 @@ Sliding Window Max
 
 *Sort Nuts and Bolts
 
-Find Max Single Sell Profile
+*Find Max Single Sell Profile
