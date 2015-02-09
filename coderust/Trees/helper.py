@@ -4,6 +4,13 @@ class TreeNode:
         self.left = None
         self.right = None
 
+    def __repr__(self):
+        if self.left and self.right:
+            msg = '<Tree Node: %s>'
+        else:
+            msg = '<Leaf Node: %s>'
+        return msg % str(self.val)
+
 
 def tree_serilize(root):
     # params: TreeNode
@@ -36,13 +43,14 @@ def tree_serilize(root):
     return _int_list[:tail + 1]
 
 
-def tree_deserilize(int_list):
+def tree_deserilize(int_list, has_parent=False):
     # params: int list
     # return: root
     # algorithm:
     #   for all tree node
     #   - left child is at position: 2n + 1
     #   - right child is at position: 2n + 2
+    #   - parent node is at: (n - 1) / 2 if < 0 do None
     tree_list = [TreeNode(x) if isinstance(x, int) else None for x in int_list]
     length = len(int_list)
     for index, node in enumerate(tree_list):
@@ -52,6 +60,10 @@ def tree_deserilize(int_list):
             node.left = tree_list[l_index]
         if r_index < length:
             node.right = tree_list[r_index]
+        if has_parent:
+            ind = (index - 1) / 2
+            # TOREAD: position lager than 0 should be assigned
+            node.parent = tree_list[ind] if ind >= 0 else None
 
     return tree_list[0]
 
@@ -88,5 +100,12 @@ def print_tree(root):
 def build_tree(array):
     if isinstance(array, list):
         return tree_deserilize(array)
+    else:
+        return
+
+
+def build_tree_with_parent(array):
+    if isinstance(array, list):
+        return tree_deserilize(array, has_parent=True)
     else:
         return
