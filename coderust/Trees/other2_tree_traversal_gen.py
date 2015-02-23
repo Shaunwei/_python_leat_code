@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #!/usr/bin/env python3
 '''
 Tree:
@@ -50,6 +51,66 @@ def in_order_py3(root):
 
 
 # helper functions and class
+=======
+def inorder1(root):
+    if root.left:
+        yield from inorder1(root.left)
+    yield root.val
+    if root.right:
+        yield from inorder1(root.right)
+
+
+def inorder2(root):
+    if not root:
+        return
+
+    for node in inorder2(root.left):
+        yield node
+    yield root.val
+    for node in inorder2(root.right):
+        yield node
+
+
+def preorder1(root):
+    yield root.val
+    if root.left:
+        yield from preorder1(root.left)
+    if root.right:
+        yield from preorder1(root.right)
+
+
+def preorder2(root):
+    if not root:
+        return
+
+    yield root.val
+    for node in preorder2(root.left):
+        yield node
+    for node in preorder2(root.right):
+        yield node
+
+
+def postorder1(root):
+    if root.left:
+        yield from postorder1(root.left)
+    if root.right:
+        yield from postorder1(root.right)
+    yield root.val
+
+
+def postorder2(root):
+    if not root:
+        return
+
+    for node in postorder2(root.left):
+        yield node
+    for node in postorder2(root.right):
+        yield node
+    yield root.val
+
+
+# Helpers
+>>>>>>> Stashed changes
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -64,13 +125,21 @@ class TreeNode:
         return msg % str(self.val)
 
 
+<<<<<<< Updated upstream
 def build_tree(int_list):
+=======
+def tree_deserilize(int_list, has_parent=False):
+>>>>>>> Stashed changes
     # params: int list
     # return: root
     # algorithm:
     #   for all tree node
     #   - left child is at position: 2n + 1
     #   - right child is at position: 2n + 2
+<<<<<<< Updated upstream
+=======
+    #   - parent node is at: (n - 1) / 2 if < 0 do None
+>>>>>>> Stashed changes
     tree_list = [TreeNode(x) if isinstance(x, int) else None for x in int_list]
     length = len(int_list)
     for index, node in enumerate(tree_list):
@@ -80,6 +149,7 @@ def build_tree(int_list):
             node.left = tree_list[l_index]
         if r_index < length:
             node.right = tree_list[r_index]
+<<<<<<< Updated upstream
     return tree_list[0]
 
 
@@ -98,3 +168,46 @@ if __name__ == '__main__':
     for x in in_order_py2(tree):
         print(x, end=', ')
     print('')
+=======
+        if has_parent:
+            ind = (index - 1) / 2
+            # TOREAD: position lager than 0 should be assigned
+            node.parent = tree_list[ind] if ind >= 0 else None
+
+    return tree_list[0]
+
+
+def build_tree(array):
+    if isinstance(array, list):
+        return tree_deserilize(array)
+    else:
+        return
+
+if __name__ == '__main__':
+    tree = build_tree([20, 50, 200, 25, 75, '#', 300])
+    print()
+    print('inorder')
+    for x in inorder1(tree):
+        print(x, end=' ')
+    print()
+    print('inorder')
+    for x in inorder2(tree):
+        print(x, end=' ')
+    print()
+    print('preorder')
+    for x in preorder1(tree):
+        print(x, end=' ')
+    print()
+    print('preorder')
+    for x in preorder2(tree):
+        print(x, end=' ')
+    print()
+    print('postorder')
+    for x in postorder1(tree):
+        print(x, end=' ')
+    print()
+    print('postorder')
+    for x in postorder2(tree):
+        print(x, end=' ')
+    print()
+>>>>>>> Stashed changes

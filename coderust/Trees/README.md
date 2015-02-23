@@ -18,4 +18,8 @@ Level Order Traversal of Binary Tree
 
 Mirror Binary Tree Nodes
 
+*N-ary Tree to Binary
+
+Populate Siblings Pointers
+
 Other1. make tree into parent accessible tree
