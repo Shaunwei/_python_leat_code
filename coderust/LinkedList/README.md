@@ -10,7 +10,7 @@ Insertion Sort of Linked List
 
 Find Intersection Point
 
-*Merge Sort
+Merge Sort
 
 Nth from last node
 
@@ -22,4 +22,4 @@ Rotate a linked list
 
 Swap Nth Node with Head
 
-Other1. find linked list middle point
+Other1. find linked list middle point and merge
