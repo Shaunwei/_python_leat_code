@@ -1,4 +1,8 @@
-# Problem: Search in Rotated Sorted Array
+'''
+Problem: Search in Rotated Sorted Array
+algorithm:
+    at least half of array is sorted
+'''
 
 
 class Solution:
@@ -14,7 +18,7 @@ class Solution:
 
         index = -1
 
-        while low < high:
+        while low <= high:
             mid = (low + high) / 2
             if array[mid] != target:
                 if array[low] < array[mid]:
@@ -25,7 +29,8 @@ class Solution:
                 # elif array[mid] < array[high]:  # WRONG
                 # low < mid or low > mid
                 # two cases
-                elif array[low] > array[mid]:
+                # elif array[low] > array[mid]:
+                else:
                     if array[mid] < target <= array[high]:
                         low = mid + 1
                     else:

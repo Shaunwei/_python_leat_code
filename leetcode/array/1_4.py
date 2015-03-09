@@ -1,5 +1,10 @@
-# Problem: Search In Rotated Sorted Array II
-#   allow duplicates
+'''
+Problem: Search In Rotated Sorted Array II
+allow duplicates
+algorithm:
+    advance bounty pointer if could not decide, only think about duplicate case
+tags: iterate bounty
+'''
 
 
 class Solution:
@@ -12,7 +17,8 @@ class Solution:
         low = 0
         high = len(array) - 1
         index = -1
-        while low < high:
+
+        while low <= high:
             mid = (low + high)/2
             if array[mid] == target:
                 index = mid
@@ -48,7 +54,7 @@ class Solution:
 # [7, 0, 1, 2, 3, 4, 5] -> second part [3, 4, 5]
 
 # Summary:
-#@ iterate bountry question
+#@ iterate bounty question
 #@ OTM:
 # if one FOLLOWUP question is hard to do,
 # consider about the easy case, solve it and find partten

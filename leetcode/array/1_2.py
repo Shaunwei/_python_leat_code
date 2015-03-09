@@ -1,5 +1,17 @@
-# Problem: remove duplicates from sorted array II
-# allow at most twice duplicates
+'''
+Problem: remove duplicates from sorted array II
+allow at most twice duplicates
+algorithm:
+    same as I
+    but add repeat flag
+tags: flag
+algorithm2:
+    two pointers, one cur one update
+    check the index[-2] value
+    if same continue
+    else: update and advance update pointer
+tags: pointer ruler
+'''
 
 
 class Solution:
@@ -35,12 +47,12 @@ class Solution:
 
 # To avoid this: missing important move
 # do difficiate change
-# differece from 1_1:
+# difference from 1_1:
 # 1. add counts flag
 # 2. after counts move, if counts less than requirement
 
 # better understanding, that previous pointer creates a new array
-# to keep dupilicates, the pre pointer needs to move
+# to keep duplicates, the pre pointer needs to move
 
     # Time: O(n)
     # Space: O(1)

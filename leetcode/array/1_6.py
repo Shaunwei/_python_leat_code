@@ -1,10 +1,16 @@
-# Problem: Longest Consecutive Sequence
-# time: O(n)
+'''
+Problem: Longest Consecutive Sequence
+time: O(n)
+algorithm:
+    dict seqs,
+    both ends expand
+'''
 
 
 class Solution:
     @classmethod
-    # Time: O(nlogn)
+    # ONLY APLY TO CONSERCTIVE SEQUENCE
+    # Time: O(n)
     # Space: O(n)
     def solve0(self, problems):
         # Solution here
@@ -35,8 +41,10 @@ class Solution:
 
         for i in used:
             length = 1  # TOREAD: careful, this is 1, I am already counted
-
-            used[i] = True
+            if used[i]:
+                continue
+            else:
+                used[i] = True
 
             j = i + 1
             while j in used and not used[j]:
@@ -72,9 +80,9 @@ class Solution:
     @classmethod
     # Time:
     # Space:
-    # union and find?
+    # union and find
+    # use set structure
     def better_solve(self, problems):
-        # Solution here
         pass
 
 if __name__ == '__main__':

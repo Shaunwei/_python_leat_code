@@ -1,5 +1,12 @@
-# Problem: Median of Two Sorted Arrays (in O(log(m+n))time)
-# similar to find the kth elements of two arrays
+'''
+Problem: Median of Two Sorted Arrays (in O(log(m+n))time)
+similar to find the kth elements of two arrays
+algorithm:
+    compare the mid point
+    and git rid of half of array values
+
+median: array[len(array)/2]
+'''
 
 
 class Solution:
@@ -14,6 +21,8 @@ class Solution:
         # if 11 elements, the median is 6th elements
         while (pa + pb) <= k - 2:
             # or (pa + pb) < k - 1:
+            # pa, pb is 0 and 1 elements
+            # then 1 2, 2 3, 3 4, 4 5
             # TOREAD: 6th elements, 0..5, already have 2 elements
             # which means only move 4 times, we get median
             if A[pa] > B[pb]:
@@ -69,7 +78,7 @@ def find_kth(A, m, B, n, k):
 if __name__ == '__main__':
     A = [1, 2, 3, 4, 5, 6]
     B = [1.1, 2.2, 3.3, 4.4, 5.5]
-    problems = [A, B] # input
+    problems = [A, B]  # input
     result = Solution.solve(problems)
 
     print result

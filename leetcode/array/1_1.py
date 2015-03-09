@@ -1,4 +1,14 @@
-# Remove Duplicates From Sorted Array
+'''
+Remove Duplicates From Sorted Array
+algorithm:
+    keep update pointer
+        if cur val == pointer:
+            continue
+        else:
+            update and advance pointer
+        return [0, pointer + 1]
+tags: two pointers, +1 problem
+'''
 
 
 class Solution:
