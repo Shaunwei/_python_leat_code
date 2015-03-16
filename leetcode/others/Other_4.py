@@ -15,6 +15,4 @@ def union_find(_list):
 
 if __name__ == '__main__':
     l = [[1, 2], [3, 4], [5, 6], [2, 5]]
-    r = [[1, 2, 5, 6], [3, 4]].sort()
-
     print union_find(l)

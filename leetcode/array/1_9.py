@@ -1,7 +1,8 @@
 '''
-Problem: Three Sum
+Problem: Three Sum Closest
 algorithm:
-    sort items and find the middle point
+    sort and find
+    keep global closest value(abs value)
 tags: sort and find
 '''
 
@@ -12,16 +13,16 @@ class Solution:
     # Space: O(n)
     def solve(self, problems):
         # Solution here
-        nums, target = problems
+        arr, target = problems
 
         def quick_sort(array):
             def partition(array, low, high):
                 pivot = array[low]
                 i, j = low, high
                 while i < j:
-                    while i <= high and array[i] <= pivot:
+                    while array[i] <= pivot and i <= high:
                         i += 1
-                    while j >= low and array[j] > pivot:
+                    while array[j] > pivot and j >= low:
                         j -= 1
                     if i < j:
                         array[i], array[j] = array[j], array[i]
@@ -36,23 +37,25 @@ class Solution:
 
             qst_rec(array, 0, len(array) - 1)
             return
-        quick_sort(nums)
 
-        result = []
-        for i in range(len(nums) - 2):
+        quick_sort(arr)
+        print arr
+        closest = 9999999  # large number
+        result = None
+        for i in range(len(arr) - 2):
             j = i + 1
-            k = len(nums) - 1
+            k = len(arr) - 1
             while j < k:
-                if nums[i] + nums[j] + nums[k] > target:
-                    k -= 1
-                elif nums[i] + nums[j] + nums[k] < target:
+                res_list = [arr[i], arr[j], arr[k]]
+                # closest is abs value
+                s = abs(sum(res_list) - target)
+                if s < closest:
+                    closest = s
+                    result = res_list
                     j += 1
                 else:
-                    item = [nums[i], nums[j], nums[k]]
-                    if item not in result:
-                        result.append(item)
                     k -= 1
-                    j += 1
+
         return result
 
 # Think:
@@ -69,11 +72,11 @@ class Solution:
         pass
 
 if __name__ == '__main__':
-    problems = [-1, 0, 1, 2, -1, -4], 0  # input
-    r = [[-1, 0, 1], [-1, -1, 2]].sort()
+    problems = [-1, 2, 1, -4], 1  # input
+    r = [-1, 1, 2]
     result = Solution.solve(problems)
 
     print result
-    assert result.sort() == r, "Solution Error."  # output check
+    assert result == r, "Solution Error."  # output check
 
     print "problems solved."

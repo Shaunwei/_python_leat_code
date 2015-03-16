@@ -14,10 +14,28 @@
 
 1.8 Three Sum
 
-1.9
+1.9 Three Sum Closest
 
-1.10
+1.10 Four Sum
 
-1.11
+1.11 Remove Element
 
 1.12 Next Permutation
+
+*1.13 Permutation Sequence
+
+*1.14 Valid Sudoku
+
+1.15 Trapping Rain Water
+
+1.16 Rotate Image(pythonic)
+
+1.17 Plus One
+
+1.18 Climbing Stairs
+
+*1.19 Gray Code
+
+1.20 Set Matrix Zeros
+
+1.21 Gas Station

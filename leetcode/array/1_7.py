@@ -1,4 +1,13 @@
-# Problem: Two Sum
+'''
+Problem: Two Sum
+algorithm:
+    hashmap all index and items
+    + 1
+
+    if not Index
+        could do sort and check low and high bound
+tags: hashmap
+'''
 
 
 class Solution:
